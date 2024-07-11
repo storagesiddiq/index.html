@@ -1,0 +1,19 @@
+.container-lg{
+    background-color: blue;
+}
+.h2{
+    text-align:center;
+    font-size: medium;
+}
+.card{
+    text-align: center;
+}
+.button1{
+    text-align: center;
+    font-size: medium;
+    font-family: 'Times New Roman', Times, serif;   
+}
+.social-icons{
+    text-align: center;
+    size: 50px;
+}
