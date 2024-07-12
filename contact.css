@@ -1,22 +1,26 @@
-.container-lg{
-    background-color: blue;
+input[type=text],
+select,
+textarea {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #eeeeee;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  resize: vertical;
 }
-.h2{
-    text-align:center;
-    font-size: medium;
+input[type=submit] {
+  background-color: #4cd9c6;
+  color: #ffffff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
 }
-.card{
-    text-align: center;
-    size: 150px;
+input[type=submit]:hover {
+  background-color: #6fe8d7;
 }
-.button1{
-    text-align: center;
-    font-size: medium;
-    font-family: 'Times New Roman', Times, serif;   
-}
-.social-icons{
-    text-align: center;
-    size: 50px;
-}
+
 
    
