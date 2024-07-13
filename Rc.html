@@ -77,10 +77,25 @@
       vehicleInfo.style.display = this.value === 'driving_lessons' ? 'block' : 'none';
       otherDetails.style.display = this.value === 'other' ? 'block' : 'none';
 
-    }
-      // Enable/disable vehicle type and registration fields based on vehicle_type selection (optional)
-      const vehicleType = document.getElementById('vehicle_type');
-      const vehicleModel = document.getElementById('vehicle_model');
-      const vehicleRegNumber = document.getElementById('vehicle_registration_number');
-    </script>
+    });
+     // Enable/disable vehicle type and registration fields based on vehicle_type selection
+const vehicle_Type = document.getElementById(' vehicle_type');
+const vehicle_Model = document.getElementById('vehicle_model');
+const vehicle_RegNumber = document.getElementById('vehicle_registration_number');
+
+vehicleType.addEventListener('change', function() {
+const selectedType = this.value; // Get the selected vehicle type
+
+  // Enable/disable fields based on selection
+  vehicleModel.disabled = selectedType === "";
+  vehicleRegNumber.disabled = selectedType === "";
+
+  // Optional additional logic:
+  // - Clear existing values in vehicleModel and vehicleRegNumber when selection changes
+  //   if (selectedType !== "") {
+  //     vehicleModel.value = "";
+  //     vehicleRegNumber.value = "";
+  //   }
+});
+  </script>
 </body>
