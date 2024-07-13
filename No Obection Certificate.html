@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>No Objection Certificate (NOC) Application Form</title>
+</head>
+<body>
+  <h1>No Objection Certificate (NOC) Application for Driving License</h1>
+
+  <form action="/submit-noc" method="post">
+    <p>**Applicant Information**</p>
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required readonly>  <br>
+
+    <label for="address">Current Address:</label>
+    <textarea id="address" name="address" rows="4" cols="50" required></textarea>
+    <br>
+
+    <p>**Driving License Information**</p>
+    <label for="license_number">Existing License Number:</label>
+    <input type="text" id="license_number" name="license_number" required>
+    <br>
+
+    <label for="license_type">License Type:</label>
+    <select id="license_type" name="license_type" >  <option value="">Select Type</option>
+      <option value="car">Car</option>
+      <option value="motorcycle">Motorcycle</option>
+      </select>
+    <br>
+
+    <label for="issued_date">License Issued Date:</label>
+    <input type="date" id="issued_date" name="issued_date" required readonly>  <br>
+
+    <label for="expiry_date">License Expiry Date:</label>
+    <input type="date" id="expiry_date" name="expiry_date" required readonly>  <br>
+
+    <p>**Reason for NOC**</p>
+    <label for="reason">Please select the reason for applying for NOC:</label>
+    <br>
+    <select id="reason" name="reason" required>
+      <option value="">Select Reason</option>
+      <option value="transfer">Transferring License to Another State</option>
+      <option value="other">Other (Please Specify)</option>
+    </select>
+    <br>
+
+    <label for="other_reason" style="display: none;">If "Other" is selected, please specify:</label>
+    <textarea id="other_reason" name="other_reason" rows="4" cols="50" disabled></textarea>
+    <br>
+
+    <p>**Declaration**</p>
+    <input type="checkbox" id="declaration" name="declaration" required>
+    <label for="declaration">I declare that all the information provided above is true and accurate. I understand that the NOC will be issued after verifying all necessary details and clearing any outstanding dues (if applicable).</label>
+    <br><br>
+
+    <button type="submit">Submit NOC Application</button>
+
+  </form>
+
+  <script>
+    // Enable the "other_reason" field only if "Other" is selected for reason
+    const reasonSelect = document.getElementById('reason');
+    const otherReason = document.getElementById('other_reason');
+
+    reasonSelect.addEventListener('change', function() {
+      otherReason.style.display = this.value === 'other' ? 'block' : 'none';
+      otherReason.disabled = this.value !== 'other';
+    });
+  </script>
+
+</body>
+</html>

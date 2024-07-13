@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driving School Service Application Form</title>
+</head>
+<body>
+  <h1>Driving School Service Application Form</h1>
+
+  <form action="/submit-application" method="post">
+    <p>**Applicant Information**</p>
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+    <br>
+
+    <label for="address">Contact Address:</label>
+    <textarea id="address" name="address" rows="4" cols="50" required></textarea>
+    <br>
+
+    <p>**Desired Service**</p>
+    <label for="service">Select Service:</label>
+    <br>
+    <select id="service" name="service" required>
+      <option value="">Select Service</option>
+      <option value="learners_permit">Learner's Permit Application Assistance</option>
+      <option value="driving_lessons">Driving Lessons (Car/Motorcycle)</option>
+      <option value="driving_test">Driving Test Booking Assistance</option>
+      <option value="other">Other (Please Specify)</option>
+    </select>
+    <br>
+
+    <div id="vehicle_info" style="display: none;">
+      <p>**Vehicle Information (if applicable)**</p>
+      <label for="vehicle_type">Vehicle Type:</label>
+      <br>
+      <select id="vehicle_type" name="vehicle_type" disabled>
+        <option value="">Select Type (if applicable)</option>
+        <option value="car">Car</option>
+        <option value="motorcycle">Motorcycle</option>
+      </select>
+      <br>
+
+      <label for="vehicle_model">Vehicle Model (if applicable):</label>
+      <input type="text" id="vehicle_model" name="vehicle_model" disabled>
+      <br>
+
+      <label for="vehicle_registration_number">Vehicle Registration Number (if applicable):</label>
+      <input type="text" id="vehicle_registration_number" name="vehicle_registration_number" disabled>
+      <br>
+    </div>
+
+    <label for="other_service_details" style="display: none;">If "Other" is selected, please specify details:</label>
+    <textarea id="other_service_details" name="other_service_details" rows="4" cols="50" disabled></textarea>
+    <br>
+
+    <p>**Declaration**</p>
+    <input type="checkbox" id="declaration" name="declaration" required>
+    <label for="declaration">I declare that all the information provided above is true and accurate.</label>
+    <br><br>
+
+    <button type="submit">Submit Application</button>
+
+  </form>
+
+  <script>
+    // Enable vehicle information and other service details conditionally
+    const serviceSelect = document.getElementById('service');
+    const vehicleInfo = document.getElementById('vehicle_info');
+    const otherDetails = document.getElementById('other_service_details');
+
+    serviceSelect.addEventListener('change', function() {
+      vehicleInfo.style.display = this.value === 'driving_lessons' ? 'block' : 'none';
+      otherDetails.style.display = this.value === 'other' ? 'block' : 'none';
+
+    }
+      // Enable/disable vehicle type and registration fields based on vehicle_type selection (optional)
+      const vehicleType = document.getElementById('vehicle_type');
+      const vehicleModel = document.getElementById('vehicle_model');
+      const vehicleRegNumber = document.getElementById('vehicle_registration_number');
+    </script>
+</body>

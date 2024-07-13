@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driving School RC Renewal Assistance Application</title>
+</head>
+<body>
+  <h1>Driving School RC Renewal Assistance Application</h1>
+
+  <form action="/submit-application" method="post">
+    <p>**Applicant Information**</p>
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required readonly>  <br>
+
+    <label for="address">Contact Address:</label>
+    <textarea id="address" name="address" rows="4" cols="50" required></textarea>
+    <br>
+
+    <p>**Existing RC Information**</p>
+    <label for="license_number">Existing Driving License Number:</label>
+    <input type="text" id="license_number" name="license_number" required>
+    <br>
+
+    <label for="existing_rc_number">Existing RC Number:</label>
+    <input type="text" id="existing_rc_number" name="existing_rc_number" required>
+    <br>
+
+    <p>**Vehicle Information**</p>
+    <label for="vehicle_type">Vehicle Type:</label>
+    <br>
+    <select id="vehicle_type" name="vehicle_type" required>
+      <option value="">Select Type</option>
+      <option value="car">Car</option>
+      <option value="motorcycle">Motorcycle</option>
+      <option value="other">Other (Please Specify)</option>
+    </select>
+    <br>
+
+    <label for="vehicle_model">Vehicle Model:</label>
+    <input type="text" id="vehicle_model" name="vehicle_model" required>
+    <br>
+
+    <label for="vehicle_registration_number">Vehicle Registration Number:</label>
+    <input type="text" id="vehicle_registration_number" name="vehicle_registration_number" required>
+    <br>
+
+    <p>**Renewal Details (if known)**</p>
+    <label for="renewal_period">Desired Renewal Period (if applicable):</label>
+    <br>
+    <select id="renewal_period" name="renewal_period" disabled>  <option value="">Select Period (if applicable)</option>
+      <option value="5">5 Years</option>
+      <option value="10">10 Years</option>
+    </select>
+    <br>
+
+    <label for="renewal_reason" style="display: none;">Reason for Early Renewal (if known):</label>
+    <textarea id="renewal_reason" name="renewal_reason" rows="4" cols="50" disabled></textarea>
+    <br>
+
+    <p>**Service Selection**</p>
+    <label for="service_level">Select Service Level:</label>
+    <br>
+    <select id="service_level" name="service_level" required>
+      <option value="">Select Level</option>
+      <option value="basic">Basic Assistance (Guidance and Documentation Help)</option>
+      <option value="full">Full Assistance (Form Filling, Appointment Booking, & Liaison)</option>
+    </select>
+    <br>
+
+    <p>**Declaration**</p>
+    <input type="checkbox" id="declaration" name="declaration" required>
+    <label for="declaration">I declare that all the information provided above is true and accurate. I understand that the driving school will assist me with the RC renewal process based on the selected service level.</label>
+    <br><br>
+
+    <button type="submit">Submit Application</button>
+
+  </form>
+
+  <script>
+    // Enable renewal period and reason fields conditionally based on service level
+    const serviceLevel = document.getElementById('service_level');
+    const renewalPeriod = document.getElementById('renewal_period');
+    const renewalReason = document.getElementById('renewal_reason');
+  </script>
+  </body>
+  </html>

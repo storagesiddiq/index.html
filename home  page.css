@@ -1,0 +1,17 @@
+.container {
+    background-color: lightgrey;
+    padding: 20px;
+    font-size: small;
+  }
+  
+  @media screen and (min-width: 601px) {
+    .container {
+      font-size: 20px;
+    }
+  }
+  
+  @media screen and (max-width: 600px) {
+    .container {
+      font-size: 20px;
+    }
+  }

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Driving License Application Form</title>
+</head>
+<body>
+  <h1>Driving License Application Form</h1>
+
+  <form action="/submit-application" method="post"> <p>**Personal Information**</p>
+    <label for="name">Full Name:</label>
+    <input type="text" id="name" name="name" required>
+    <br>
+
+    <label for="dob">Date of Birth:</label>
+    <input type="date" id="dob" name="dob" required>
+    <br>
+
+    <label for="address">Address:</label>
+    <textarea id="address" name="address" rows="4" cols="50" required></textarea>
+    <br>
+
+    <p>**Contact Information**</p>
+    <label for="phone">Phone Number:</label>
+    <input type="tel" id="phone" name="phone" required>
+    <br>
+
+    <label for="email">Email Address:</label>
+    <input type="email" id="email" name="email" required>
+    <br>
+
+    <p>**License Details**</p>
+    <label for="license_type">License Type (e.g., Car, Motorcycle):</label>
+    <select id="license_type" name="license_type" required>
+      <option value="">Select Type</option>
+      <option value="car">Car</option>
+      <option value="motorcycle">Motorcycle</option>
+      </select>
+    <br>
+
+    <p>**Medical Information**</p>
+    <label for="medical_condition">Do you have any medical conditions that may affect your driving? (Yes/No)</label>
+    <br>
+    <input type="radio" id="yes" name="medical_condition" value="yes">
+    <label for="yes">Yes</label>
+    <input type="radio" id="no" name="medical_condition" value="no" checked>
+    <label for="no">No</label>
+    <br>
+
+    <label for="medical_details">If yes, please specify:</label>
+    <textarea id="medical_details" name="medical_details" rows="4" cols="50" disabled></textarea>
+    <br>
+
+    <p>**Declaration**</p>
+    <input type="checkbox" id="declaration" name="declaration" required>
+    <label for="declaration">I declare that all the information provided above is true and accurate.</label>
+    <br><br>
+
+    <button type="submit">Submit Application</button>
+
+  </form>
+
+  <script>
+    // Enable the medical details field only if "Yes" is selected for medical condition
+    const medicalCondition = document.getElementsByName('medical_condition');
+    const medicalDetails = document.getElementById('medical_details');
+
+    medicalCondition.forEach(condition => {
+      condition.addEventListener('change', function() {
+        medicalDetails.disabled = this.value !== 'yes';
+      });
+    });
+  </script>
+
+</body>
+</html>
