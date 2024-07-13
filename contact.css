@@ -1,25 +1,15 @@
-input[type=text],
-select,
-textarea {
-  width: 100%;
-  padding: 8px;
-  border: 1px solid #eeeeee;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 8px;
-  margin-bottom: 16px;
-  resize: vertical;
+.container{
+  text-align: center;
+  padding: auto;
+  margin: auto;
+  text-decoration: none;
+
 }
-input[type=submit] {
-  background-color: #4cd9c6;
-  color: #ffffff;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 7px;
-  cursor: pointer;
-}
-input[type=submit]:hover {
-  background-color: #6fe8d7;
+.images{
+  size-adjust: 500px;
+  margin: auto;
+  background-position: center;
+
 }
 
 
