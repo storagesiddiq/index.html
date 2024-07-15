@@ -9,7 +9,13 @@
   size-adjust: 500px;
   margin: auto;
   background-position: center;
+  box-sizing: content-box;
 
+}
+.ft-1{
+  background-color: blue;
+  margin: auto;
+  text-align: center;
 }
 
 
